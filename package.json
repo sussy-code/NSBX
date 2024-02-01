@@ -3,14 +3,6 @@
   "version": "1.0.0",
   "description": "Pastebin for anything",
   "type": "module",
-  "dependencies": {
-    "apollo-datasource-rest": "^3.5.2",
-    "apollo-server-cloudflare": "^3.6.7",
-    "graphql": "^16.3.0",
-    "itty-router": "^2.6.1",
-    "itty-router-extras": "^0.4.2",
-    "moment": "^2.29.2"
-  },
   "scripts": {
     "start": "node src/index.js"
   },
@@ -34,7 +26,13 @@
     "firebase": "^10.7.2",
     "install": "^0.13.0",
     "npm": "^10.4.0",
-    "serve-static": "^1.15.0"
+    "serve-static": "^1.15.0",
+    "apollo-datasource-rest": "^3.5.2",
+    "apollo-server-cloudflare": "^3.6.7",
+    "graphql": "^16.3.0",
+    "itty-router": "^2.6.1",
+    "itty-router-extras": "^0.4.2",
+    "moment": "^2.29.2"
   },
   "engines": {
     "npm": ">=8.0.0",
