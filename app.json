@@ -1,0 +1,7 @@
+{
+  "name": "Pirate's Paste",
+  "description": "A paste bin for anything.",
+  "repository": "https://github.com/itzCozi/pirates-paste",
+  "logo": "https://github.com/itzCozi/Hypertabs/blob/main/static/icon.png?raw=true",
+  "keywords": ["paste", "pastebin"]
+}
