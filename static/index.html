@@ -6,50 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/themes/index-theme.css">
   <title>PiratesPaste</title>
-  <script>
-    // JavaScript for dark mode toggle
-    window.onload = function() {
-      const darkModeToggle = document.getElementById('darkModeToggle');
-      darkModeToggle.addEventListener('change', toggleDarkMode);
-    
-      function toggleDarkMode() {
-        document.body.classList.toggle('dark-mode');
-        const backgroundColor = darkModeToggle.checked ? '#323232' : '#f0f0f0';
-        document.body.style.backgroundColor = backgroundColor;
-        const overlayColor = darkModeToggle.checked ? '#3a3a3a' : '#dddddd';
-        document.querySelector('.container').style.backgroundColor = overlayColor;
-    
-        // Change text color based on dark mode state
-        const pColor = darkModeToggle.checked ? '#c0c0c0' : '#666';
-        const h1Color = darkModeToggle.checked ? '#d0d0d0' : '#333';
-        document.querySelector('h1').style.color = h1Color;
-        document.querySelector('p').style.color = pColor;
-      }
-    }
-  </script>
+  <script src="js/darkmode.js"></script>
 </head>
 
 <body>
-  <div class="home-icon icon">
-    <img src="assets/home.png" alt="Home" height="38" width="38" onclick="window.location.href = '/'">
+  <div class="top-bar">
+    <div class="left-icons">
+      <div class="icon home-icon">
+        <img src="assets/home.png" alt="Home" height="38" width="38" onclick="window.location.href = '/'">
+      </div>
+      <div class="icon help-icon">
+        <img src="assets/wiki.png" alt="Help" height="38" width="38" onclick="window.location.href = '/'">
+      </div>
+    </div>
+    <h1>PiratesPaste</h1>
+    <div class="right-icons">
+      <label class="switch" for="darkModeToggle">
+        <input type="checkbox" id="darkModeToggle" placeholder="if this is blank it breaks">
+        <span class="slider round"></span>
+      </label>
+    </div>
   </div>
-  <div class="help-icon icon">
-    <img src="assets/wiki.png" alt="Help" height="38" width="38" onclick="window.location.href = '/'">
-  </div>
-  <label class="toggle-lable" for="darkModeToggle">Dark Mode:</label>
-  <label class="switch" for="darkModeToggle">
-    <input type="checkbox" id="darkModeToggle">
-    <span class="slider round"></span>
-  </label>
 
-  <h1>PiratesPaste</h1>
   <div class="container">
     <div class="author-title">
       <input type="text" class="paste-title" placeholder="Paste Title">
       <div class="text-wrapper">By</div>
       <input type="text" class="author" placeholder="Author's name">
     </div>
-    <textarea class=" text-input" placeholder="Paste Content"></textarea>
+    <textarea class="text-input" placeholder="Paste Content"></textarea>
   </div>
 </body>
 
