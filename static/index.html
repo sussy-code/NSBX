@@ -29,13 +29,18 @@
   </div>
 
   <div class="container">
-    <div class="author-title">
-      <input type="text" class="paste-title" placeholder="Paste Title">
-      <div class="text-wrapper">By</div>
-      <input type="text" class="author" placeholder="Author's name">
-    </div>
-    <textarea class="text-input" placeholder="Paste Content"></textarea>
+    <form id="paste-form">
+      <div class="author-title">
+        <input type="text" id="paste-title" class="paste-title" placeholder="Paste Title" required>
+        <div class="text-wrapper">By</div>
+        <input type="text" id="author-name" class="author" placeholder="Author's name" required>
+      </div>
+      <textarea id="paste-content" class="text-input" placeholder="Paste Content" required></textarea>
+      <button type="submit">Create Paste</button>
+    </form>
   </div>
+  
+  <script src="js/create-paste.js"></script>
 </body>
 
 </html>
