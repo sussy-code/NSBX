@@ -1,48 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/themes/index-theme.css" />
+    <title>PiratesPaste</title>
+    <script src="js/darkmode.js"></script>
+    <!-- Include the JavaScript file -->
+    <script src="js/create-paste.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/themes/index-theme.css">
-  <title>PiratesPaste</title>
-  <script src="js/darkmode.js"></script>
-</head>
-
-<!--Just make new entrys create a file in the pages directory lmao-->
-
-<body>
-  <div class="top-bar">
-    <div class="left-icons">
-      <div class="icon home-icon">
-        <img src="assets/home.png" alt="Home" height="38" width="38" onclick="window.location.href = '/'">
+  <body>
+    <div class="top-bar">
+      <div class="left-icons">
+        <div class="icon home-icon">
+          <img src="assets/home.png" alt="Home" height="38" width="38" onclick="window.location.href = '/'"/>
+        </div>
+        <div class="icon help-icon">
+          <img src="assets/wiki.png" alt="Help" height="38" width="38" onclick="window.location.href = '/'"/>
+        </div>
       </div>
-      <div class="icon help-icon">
-        <img src="assets/wiki.png" alt="Help" height="38" width="38" onclick="window.location.href = '/'">
+      <h1>PiratesPaste</h1>
+      <div class="right-icons">
+        <label class="switch" for="darkModeToggle">
+          <input type="checkbox" id="darkModeToggle" placeholder="if this is blank it breaks"/>
+          <span class="slider round"></span>
+        </label>
       </div>
     </div>
-    <h1>PiratesPaste</h1>
-    <div class="right-icons">
-      <label class="switch" for="darkModeToggle">
-        <input type="checkbox" id="darkModeToggle" placeholder="if this is blank it breaks">
-        <span class="slider round"></span>
-      </label>
+
+    <div class="container">
+      <form id="paste-form">
+        <div class="author-title">
+          <input type="text" id="paste-title" class="paste-title" placeholder="Paste Title" required/>
+          <div class="text-wrapper">By</div>
+          <input type="text" id="author-name" class="author" placeholder="Author's name" required/>
+        </div>
+        <textarea id="paste-content" class="text-input" placeholder="Paste Content" required></textarea>
+        <button type="submit">Create Paste</button>
+      </form>
     </div>
-  </div>
 
-  <div class="container">
-    <form id="paste-form">
-      <div class="author-title">
-        <input type="text" id="paste-title" class="paste-title" placeholder="Paste Title" required>
-        <div class="text-wrapper">By</div>
-        <input type="text" id="author-name" class="author" placeholder="Author's name" required>
-      </div>
-      <textarea id="paste-content" class="text-input" placeholder="Paste Content" required></textarea>
-      <button type="submit">Create Paste</button>
-    </form>
-  </div>
-  
-  <script src="js/create-paste.js"></script>
-</body>
+    <script>
+      // Add event listener for form submission
+      document.getElementById("paste-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
 
+        // Get input values
+        var pasteTitle = document.getElementById("paste-title").value;
+        var authorName = document.getElementById("author-name").value;
+        var pasteContent = document.getElementById("paste-content").value;
+
+        // Create a new file in the pages directory
+        createNewFile(pasteTitle, authorName, pasteContent);
+      });
+    </script>
+  </body>
 </html>
