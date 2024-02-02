@@ -1,3 +1,5 @@
+// create-paste.js
+
 // Function to create a new file in the pages directory
 function createNewFile(title, author, content) {
   // Create a clone of the index.html content

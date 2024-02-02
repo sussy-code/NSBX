@@ -40,20 +40,5 @@
         <button type="submit">Create Paste</button>
       </form>
     </div>
-
-    <script>
-      // Add event listener for form submission
-      document.getElementById("paste-form").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission
-
-        // Get input values
-        var pasteTitle = document.getElementById("paste-title").value;
-        var authorName = document.getElementById("author-name").value;
-        var pasteContent = document.getElementById("paste-content").value;
-
-        // Create a new file in the pages directory
-        createNewFile(pasteTitle, authorName, pasteContent);
-      });
-    </script>
   </body>
 </html>
