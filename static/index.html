@@ -8,28 +8,6 @@
   <script src="js/darkmode.js"></script>
   <!-- Include the JavaScript file -->
   <script src="js/create-paste.js"></script>
-  <style>
-    /* Add CSS for the iframe */
-    .container {
-      position: relative;
-      width: 100%;
-      height: auto;
-      min-width: 600px;
-      min-height: 800px;
-      max-width: 1000px;
-      overflow-y: hidden;
-    }
-  
-    .container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      border: none;
-      font-family: 'iso';
-    }
-  </style>
 </head>
 <body>
   <div class="top-bar">
@@ -51,25 +29,8 @@
   </div>
 
   <div class="container">
-    <iframe id="fileFrame" src="assets/test.nfo" frameborder="0" width="100%" onload="resizeIframe()"></iframe>
+    <iframe src="assets/test.nfo" frameborder="0"></iframe>
   </div>
 
-  <script>
-  function resizeIframe() {
-    var iframe = document.getElementById("fileFrame");
-    var loadListener = function () {
-      var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-      var contentHeight = Math.max(innerDoc.body.scrollHeight, innerDoc.documentElement.scrollHeight);
-      iframe.style.height = contentHeight + "px";
-
-      // Center the content horizontally
-      innerDoc.body.style.display = 'flex';
-      innerDoc.body.style.justifyContent = 'center';
-      
-      iframe.removeEventListener("load", loadListener);
-    };
-    iframe.addEventListener("load", loadListener);
-  }
-</script>
 </body>
 </html>

@@ -1,1 +1,32 @@
 No nfo rn check: https://defacto2.net/file/index
+
+import { createServer } from "http";
+import { readFileSync } from "fs";
+import { fileURLToPath } from "url";
+import { resolve, dirname } from "path";
+import serveStatic from "serve-static";
+
+const PORT = process.env.PORT || 8080;
+
+// Serve static files using serve-static middleware
+const serve = serveStatic(fileURLToPath(new URL("../static", import.meta.url)));
+
+const server = createServer((req, res) => {
+  // Delegate static file serving to the serve-static middleware
+  serve(req, res, () => {
+    // If the request is not for a static file, serve the index.html file
+    const indexPath = resolve(dirname(fileURLToPath(import.meta.url)), "../static/index.html");
+    const indexContent = readFileSync(indexPath, "utf-8");
+    res.writeHead(200, { "Content-Type": "text/html" });
+    res.end(indexContent);
+  });
+});
+
+server.on("listening", () => {
+  const addr = server.address();
+  console.log(`Server running on port ${addr.port}\n`);
+  console.log(`Local: http://localhost:${addr.port}`);
+  console.log(`On Your Network: http://localhost:${addr.port}`);
+});
+
+server.listen(PORT);

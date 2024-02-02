@@ -7,12 +7,17 @@ body {
 }
 
 .top-bar {
+  position: fixed; /* Change from 'relative' to 'fixed' */
+  top: 0; /* Align to the top of the viewport */
+  left: 0; /* Align to the left of the viewport */
+  width: 98%; /* Occupy the full width of the viewport */
   background-color: #ddd;
   padding: 2px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it's above other content */
 }
 
 .left-icons,
@@ -93,13 +98,34 @@ h1 {
 }
 
 .container {
+  position: relative;
   background-color: #dddddd;
-  max-width: 1200px;
   margin: 50px auto; /* Adjust margin-top and margin-bottom to center vertically */
   padding: 60px 40px; /* Adjust padding to the left and right */
   border-radius: 8.5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease;
+  padding-bottom: 120px; /* Add space between container and bottom of the page */
+  top: 80px;
+  bottom: 120px;
+  width: 100%;
+  height: auto;
+  min-width: 600px;
+  min-height: 950px;
+  max-width: 1200px;
+  max-height: 3000px;
+  overflow-y: hidden;
+}
+
+.container iframe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .author-title {
