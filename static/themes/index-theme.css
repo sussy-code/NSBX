@@ -100,32 +100,17 @@ h1 {
 .container {
   position: relative;
   background-color: #dddddd;
-  margin: 50px auto;
-  padding: 60px 40px;
+  margin: 140px auto;
+  padding: 80px 40px;
   border-radius: 8.5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transition: background-color 0.2s ease;
-  padding-bottom: 120px;
-  top: 80px;
-  bottom: 120px;
   width: 100%;
   height: auto;
   min-width: 600px;
-  min-height: 950px;
   max-width: 1200px;
   max-height: 3000px;
   overflow-y: hidden;
-}
-
-.container iframe {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
 }
 
 .title {
@@ -180,16 +165,16 @@ h1 {
   max-width: 700px;
   min-width: 450px;
   padding: 10px;
-  background-color: #cacaca;
-  border-radius: 15px;
-  border: 1px solid #cacaca;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-  font-family: "Roboto", "Segoe UI", Tahoma, sans-serif;
-  font-size: 20px;
-  color: #494949;
+  font-family: Arial, sans-serif;
   text-align: center;
+  color: #494949;
+  font-size: 24px;
+  background-color: #cacaca;
+  border-radius: 8.5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease;
+  border: 1px solid #cacaca;
   cursor: pointer;
-  transition-duration: 0.4s;
 }
 
 #login-form-submit:hover {
