@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/themes/index-theme.css">
   <title>PiratesPaste</title>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
   <script src="js/darkmode.js"></script>
-  <!-- Include the JavaScript file -->
-  <script src="js/create-paste.js"></script>
+  <script type="module" src="js/storepaste.js"></script>
 </head>
+
 <body>
   <div class="top-bar">
     <div class="left-icons">
       <div class="icon home-icon">
-        <img src="assets/home.png" alt="Home" height="38" width="38" onclick="window.location.href = '/'"/>
+        <img src="assets/home.png" alt="Home" height="38" width="38" onclick="window.location.href = '/'">
       </div>
       <div class="icon help-icon">
-        <img src="assets/wiki.png" alt="Help" height="38" width="38" onclick="window.location.href = '/'"/>
+        <img src="assets/wiki.png" alt="Help" height="38" width="38" onclick="window.location.href = '/'">
       </div>
     </div>
     <h1>PiratesPaste</h1>
     <div class="right-icons">
       <label class="switch" for="darkModeToggle">
-        <input type="checkbox" id="darkModeToggle" placeholder="if this is blank it breaks"/>
+        <input type="checkbox" id="darkModeToggle" placeholder="if this is blank it breaks">
         <span class="slider round"></span>
       </label>
     </div>
   </div>
 
   <div class="container">
-    <iframe src="assets/test.nfo" frameborder="0"></iframe>
+    <form id="paste-form">
+      <div class="title">
+        <input type="text" id="paste-title" class="paste-title" placeholder="Paste Title" required>
+      </div>
+      <textarea id="paste-content" class="text-input" placeholder="Paste Content" required></textarea>
+      <div id="login-form-container">
+        <input type="submit" value="Submit" id="login-form-submit" onclick="storePaste()" />
+      </div>
+    </form>
   </div>
 
 </body>
+
 </html>

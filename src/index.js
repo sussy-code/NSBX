@@ -10,9 +10,7 @@ const PORT = process.env.PORT || 8080;
 const serve = serveStatic(fileURLToPath(new URL("../static", import.meta.url)));
 
 const server = createServer((req, res) => {
-  // Delegate static file serving to the serve-static middleware
   serve(req, res, () => {
-    // If the request is not for a static file, serve the index.html file
     const indexPath = resolve(dirname(fileURLToPath(import.meta.url)), "../static/index.html");
     const indexContent = readFileSync(indexPath, "utf-8");
     res.writeHead(200, { "Content-Type": "text/html" });

@@ -31,24 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const textInputBackgroundColor = isDarkMode ? "#535353" : "#cacaca";
       const textInputColor = isDarkMode ? "#f0f0f0" : "#494949";
       const textInputBorder = isDarkMode ? "1px solid #535353" : "1px solid #cacaca";
-      const textInputBoxShadow = isDarkMode ? "0 0 10px rgba(255, 255, 255, 0.1)" : "0 0 10px rgba(0, 0, 0, 0.1)";
+      const textInputBoxShadow = isDarkMode ? "0 0 10px rgba(255, 255, 255, 0.05)" : "0 0 10px rgba(0, 0, 0, 0.05)";
       textInput.style.backgroundColor = textInputBackgroundColor;
       textInput.style.color = textInputColor;
       textInput.style.border = textInputBorder;
       textInput.style.boxShadow = textInputBoxShadow;
-    }
-
-    // Set color for author
-    const authorInput = document.querySelector(".author");
-    if (authorInput) {
-      const authorInputBackgroundColor = isDarkMode ? "#535353" : "#cacaca";
-      const authorInputColor = isDarkMode ? "#f0f0f0" : "#494949";
-      const authorInputBorder = isDarkMode ? "1px solid #535353" : "1px solid #cacaca";
-      const authorInputBoxShadow = isDarkMode ? "0 0 10px rgba(255, 255, 255, 0.1)" : "0 0 10px rgba(0, 0, 0, 0.1)";
-      authorInput.style.backgroundColor = authorInputBackgroundColor;
-      authorInput.style.color = authorInputColor;
-      authorInput.style.border = authorInputBorder;
-      authorInput.style.boxShadow = authorInputBoxShadow;
     }
 
     // Set color for paste-title
@@ -57,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const titleInputBackgroundColor = isDarkMode ? "#535353" : "#cacaca";
       const titleInputColor = isDarkMode ? "#f0f0f0" : "#494949";
       const titleInputBorder = isDarkMode ? "1px solid #535353" : "1px solid #cacaca";
-      const titleInputBoxShadow = isDarkMode ? "0 0 10px rgba(255, 255, 255, 0.1)" : "0 0 10px rgba(0, 0, 0, 0.1)";
+      const titleInputBoxShadow = isDarkMode ? "0 0 10px rgba(255, 255, 255, 0.05)" : "0 0 10px rgba(0, 0, 0, 0.05)";
       titleInput.style.backgroundColor = titleInputBackgroundColor;
       titleInput.style.color = titleInputColor;
       titleInput.style.border = titleInputBorder;
@@ -65,10 +52,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Set color for text-wrapper
-    const textWrapper = document.querySelector('.text-wrapper');
-    if (textWrapper) {
-      const textWrapperColor = isDarkMode ? '#c0c0c0' : '#535353';
-      textWrapper.style.color = textWrapperColor;
+    const buttonInput = document.querySelector('#login-form-submit');
+    if (buttonInput) {
+      const buttonInputBackgroundColor = isDarkMode ? '#535353' : '#cacaca';
+      const buttonInputColor = isDarkMode ? "#f0f0f0" : "#494949";
+      const buttonInputBorder = isDarkMode ? "1px solid #535353" : "1px solid #cacaca";
+      const buttonInputBoxShadow = isDarkMode ? "0 0 10px rgba(255, 255, 255, 0.05)" : "0 0 10px rgba(0, 0, 0, 0.05)";
+      buttonInput.style.backgroundColor = buttonInputBackgroundColor;
+      buttonInput.style.color = buttonInputColor;
+      buttonInput.style.border = buttonInputBorder;
+      buttonInput.style.boxShadow = buttonInputBoxShadow;
     }
   }
 });
