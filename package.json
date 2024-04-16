@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Home page for API",
   "type": "module",
-  "scripts": {
-    "start": "node src/index.js"
-  },
   "files": [
     "static",
     "src",
