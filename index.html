@@ -30,55 +30,50 @@
       }
 
       .text {
-        margin-left: 4px;
-        margin-right: 4px;
+        margin-left: 0.25em;
+        margin-right: 0.25em;
       }
 
       .text-box {
         cursor: text;
       }
 
-      .increased-margin {
-        margin-left: 8px;
-        margin-right: 8px;
-      }
-
       .ratelimit-box {
         background-color: transparent;
         width: 50%;
-        border: #505050 solid 0.1px;
+        border: #505050 solid 0.00625em;
         margin-right: auto;
         margin-left: auto;
         text-align: center;
-        border-radius: 3px;
+        border-radius: 0.1875em;
       }
 
       .email-address {
-        padding: 10px;
+        padding: 0.625em;
         color: #cfcfcf;
         border: transparent solid;
-        border-radius: 4px;
-        margin: 2px;
+        border-radius: 0.25em;
+        margin: 0.125em;
         width: 42%;
         height: auto;
       }
 
       .email-subject {
-        padding: 10px;
+        padding: 0.625em;
         color: #cfcfcf;
         border: transparent solid;
-        border-radius: 4px;
-        margin: 2px;
-        width: 55%;
+        border-radius: 0.25em;
+        margin: 0.125em;
+        width: 50%;
         height: auto;
       }
 
       .email-body {
-        padding: 10px;
+        padding: 0.625em;
         color: #cfcfcf;
         border: transparent solid;
-        border-radius: 4px;
-        margin: 2px;
+        border-radius: 0.25em;
+        margin: 0.125em;
         width: 100%;
         height: auto;
         resize: none;
@@ -97,18 +92,18 @@
       }
 
       .api-response {
-        padding-top: 12px;
-        padding-left: 12px;
-        padding-right: 12px;
-        border-radius: 4px;
-        margin-left: 2px;
-        margin-right: 2px;
+        padding-top: 0.75em;
+        padding-left: 0.75em;
+        padding-right: 0.75em;
+        border-radius: 0.25em;
+        margin-left: 0.125em;
+        margin-right: 0.125em;
       }
 
       .email {
         border: transparent solid;
-        padding: 8px;
-        border-radius: 6px;
+        padding: 0.5em;
+        border-radius: 0.375em;
         color: #cfcfcf;
       }
 
@@ -118,28 +113,72 @@
         cursor: pointer;
       }
 
+      .email-bar {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        padding-left: 0.9375em;
+        border-left: 0.19em #8D44D6 solid;
+        border-radius: 0.2em;
+      }
+
+      .bar {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        padding-left: 0.9375em;
+        border-left: 0.19em #8D44D6 solid;
+        border-radius: 0.2em;
+      }
+
+      .bar:hover {
+        transition: 0.4s;
+        background-color: #1a1a1a;
+      }
+
       .img-button {
         font-size: large;
       }
 
       .img-button:hover {
         transform: scale(1.1);
+        transition: 0.5s;
+        cursor: pointer;
+      }
+
+      .small-button {
+        border: transparent solid;
+        padding: 0.35em;
+        font-size: 14px;
+        border-radius: 0.375em;
+        color: #cfcfcf;
+      }
+
+      .small-button:hover {
+        transform: scale(1.05);
         transition: 0.1s;
         cursor: pointer;
       }
     </style>
     <script>
-      function logEmailInputs() {
-        var sender = document.getElementById('email-address-input').value;
+      function openMailClient() {
         var subject = document.getElementById('email-subject-input').value;
         var content = document.getElementById('email-content-input').value;
       
-        if (sender !== '' && content !== '' && subject !== '') {
+        if (content !== '' && subject !== '') {
           const mailLink = `mailto:dev@nsbx.ru?subject=${subject}&body=${content}`;
           window.open(mailLink, '_blank');
         }
       }
-      </script>
+
+      function copyToClipboard() {
+        var text = document.querySelector('.api-response pre').innerText;
+        var tempInput = document.createElement('textarea');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+      }
+    </script>
   </head>
 
   <body>
@@ -171,8 +210,8 @@
             <hr />
             <p class='text'>Only two services are currently defined, but more may be added if needed.<br /></p>
 
-            <div class='mt-3 px-3 border-start border-primary border-3 increased-margin'>
-              <dl class='row'>
+            <div class='bar'>
+              <dl class='row pt-1'>
                 <dt class='col-1 font-monospace'>VP</dt>
                 <dd class='col-11'>Vaporpick</dd>
 
@@ -191,11 +230,10 @@
               20 requests per hour
             </div>
           </div>
-
           <div class='col-md-6'>
             <h4>Response</h4>
             <hr />
-            <div class='bg-dark mb-3 api-response'>
+            <div class='bg-dark mb-3 api-response' style="cursor: text;">
               <pre>
 {
   'gmid': 'M.848326',
@@ -210,13 +248,16 @@
 }
               </pre>
             </div>
+            <button onclick='copyToClipboard()' class='small-button bg-dark'>
+              Copy to clipboard
+            </button>
             <hr />
             <div class='mb-3 text'>
               The <span class='font-monospace bg-dark p-1 rounded text-box'>ids</span> value is what most will be interested in. This contains a mapping of provider names to their site-specific identifier for the media.
-              <div class='mt-3 text px-3 border-start border-primary border-3'>
+              <div class='mt-3 text py-1 bar'>
                 Provider names will always be lowercased
               </div>
-              <div class='my-3 text px-3 border-start border-primary border-3'>
+              <div class='my-3 text py-1 bar'>
                 If a provider requires multiple IDs to resolve the media they will be pipe <span class='font-monospace bg-dark p-1 rounded text-box'>|</span> delimited under one key
               </div>
               The <span class='font-monospace bg-dark p-1 rounded text-box'>hash</span> value is an MD5 hash of the GMID. This is currently only used for file storage.
@@ -231,14 +272,15 @@
           We are open to feedback about our API and services at NSBX.<br />
           Though we will not comply to complaints about scrapping unless our philosophy suddenly changes.
         </p>
-        <div class='flex' style='display: flex; justify-content: space-between; padding-bottom: 12px;'>
-          <input class='bg-dark email-address' type='email' id='email-address-input' placeholder='Sender email:' />
-          <input class='bg-dark email-subject' type='email' id='email-subject-input' placeholder='Subject:' />
+        <div class="email-bar">
+          <div class='pb-2'>
+            <input class='bg-dark email-subject' type='email' id='email-subject-input' placeholder='Subject:' />
+          </div>
+          <textarea class='bg-dark email-body pb-5' id='email-content-input' placeholder='Email content...'></textarea>
+          <button onclick='openMailClient()' class='email bg-dark mt-2'>
+            Send to dev@nsbx.ru
+          </button>
         </div>
-        <textarea class='bg-dark email-body pb-5' id='email-content-input' placeholder='Email content...'></textarea>
-        <button onclick='logEmailInputs()' class='email bg-dark mt-2'>
-          Send to dev@nsbx.ru
-        </button>
       </div>
     </div>
   </body>
