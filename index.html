@@ -7,24 +7,24 @@
 -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="utf-8" />
-    <meta name="author" content="BadDev" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
-    <link rel="icon" href="https://i.postimg.cc/prbvRXth/icon.png" type="image/x-icon" />
+    <meta charset='utf-8' />
+    <meta name='author' content='BadDev' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap' rel='stylesheet' />
+    <link rel='icon' href='https://i.postimg.cc/prbvRXth/icon.png' type='image/x-icon' />
     <title>NSBX</title>
 
-    <link rel="canonical" href="https://YOUR_DOMAIN.TLD" />
+    <link rel='canonical' href='https://YOUR_DOMAIN.TLD' />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous' />
 
     <style>
       body {
-        font-family: "Open Sans", sans-serif;
+        font-family: 'Open Sans', sans-serif;
         color: #cfcfcf;
         background-color: #131313;
       }
@@ -128,105 +128,117 @@
         cursor: pointer;
       }
     </style>
+    <script>
+      function logEmailInputs() {
+        var sender = document.getElementById('email-address-input').value;
+        var subject = document.getElementById('email-subject-input').value;
+        var content = document.getElementById('email-content-input').value;
+      
+        if (sender !== '' && content !== '' && subject !== '') {
+          const mailLink = `mailto:dev@nsbx.ru?subject=${subject}&body=${content}`;
+          window.open(mailLink, '_blank');
+        }
+      }
+      </script>
   </head>
 
   <body>
-    <div class="col-lg-8 mx-auto p-4 py-md-5">
-      <header class="d-flex align-items-center pb-3 mb-3">
-        <div class="col-6">
-          <a href="https://nsbx.ru" rel="noopener" title="home page" class="d-flex align-items-center text-light">
-            <img height="60px" width="auto" src="https://i.postimg.cc/tCzZT74H/home-icon.png" alt="home icon with text" class="img-button" />
+    <div class='col-lg-8 mx-auto p-4 py-md-5'>
+      <header class='d-flex align-items-center pb-3 mb-3'>
+        <div class='col-6'>
+          <a href='https://nsbx.ru' rel='noopener' title='home page' class='d-flex align-items-center text-light'>
+            <img height='60px' width='auto' src='https://i.postimg.cc/tCzZT74H/home-icon.png' alt='home icon with text' class='img-button' />
           </a>
         </div>
-        <div class="col-6 text-end">
-          <a href="https://rentry.co/NSBlog" rel="noopener" title="blog page" target="_blank" class="align-items-center">
-            <img height="52px" width="auto" src="https://i.postimg.cc/TYHZdt9n/blogger.png" alt="blogger icon white" class="img-button" />
+        <div class='col-6 text-end'>
+          <a href='https://rentry.co/NSBlog' rel='noopener' title='blog page' target='_blank' class='align-items-center'>
+            <img height='52px' width='auto' src='https://i.postimg.cc/TYHZdt9n/blogger.png' alt='blogger icon white' class='img-button' />
           </a>
         </div>
       </header>
 
       <main>
-        <div class="row g-5" style="cursor: default;">
-          <div class="col-md-6">
+        <div class='row g-5' style='cursor: default;'>
+          <div class='col-md-6'>
             <h3>WTF is a NSBX?</h3>
             <hr />
-            <p class="text">
+            <p class='text'>
               NSBX is an API used by sudo-flix and other movie-web fork for scraping content and subtitles, The NSBX API is a critical part of the infrastructure that enables sudo-flix and other movie-web forks to offer a wide range of
               content and 3rd party features to their users. Most of the content people will be looking for is accessible from a single API: NSBX.
             </p>
 
             <h4>Services</h4>
             <hr />
-            <p class="text">Only two services are currently defined, but more may be added if needed.<br /></p>
+            <p class='text'>Only two services are currently defined, but more may be added if needed.<br /></p>
 
-            <div class="mt-3 px-3 border-start border-primary border-3 increased-margin">
-              <dl class="row">
-                <dt class="col-1 font-monospace">VP</dt>
-                <dd class="col-11">Vaporpick</dd>
+            <div class='mt-3 px-3 border-start border-primary border-3 increased-margin'>
+              <dl class='row'>
+                <dt class='col-1 font-monospace'>VP</dt>
+                <dd class='col-11'>Vaporpick</dd>
 
-                <dt class="col-1 font-monospace">CR</dt>
-                <dd class="col-11">CineRaid</dd>
+                <dt class='col-1 font-monospace'>CR</dt>
+                <dd class='col-11'>CineRaid</dd>
               </dl>
             </div>
 
             <h4>Ratelimits</h4>
             <hr />
-            <p class="text">
+            <p class='text'>
               Our ratelimits are designed to be lenient for users and strict for scrapers, we are open to changing them at a later point.
             </p>
 
-            <div class="ratelimit-box">
+            <div class='ratelimit-box'>
               20 requests per hour
             </div>
           </div>
 
-          <div class="col-md-6">
+          <div class='col-md-6'>
             <h4>Response</h4>
             <hr />
-            <div class="bg-dark mb-3 api-response">
+            <div class='bg-dark mb-3 api-response'>
               <pre>
 {
-  "gmid": "M.848326",
-  "tmdb": "848326",
-  "ids": {
-    "febbox": "9352539",
-    "flixhq": "11054",
-    "superstream": "23613",
-    "upcloud": "Fi2PTv1w426l"
+  'gmid': 'M.848326',
+  'tmdb': '848326',
+  'ids': {
+    'febbox': '9352539',
+    'flixhq': '11054',
+    'superstream': '23613',
+    'upcloud': 'Fi2PTv1w426l'
   },
-  "hash": "7c058fcc923017264da8c017c550fe9d"
+  'hash': '7c058fcc923017264da8c017c550fe9d'
 }
               </pre>
             </div>
             <hr />
-            <div class="mb-3 text">
-              The <span class="font-monospace bg-dark p-1 rounded text-box">ids</span> value is what most will be interested in. This contains a mapping of provider names to their site-specific identifier for the media.
-              <div class="mt-3 text px-3 border-start border-primary border-3">
+            <div class='mb-3 text'>
+              The <span class='font-monospace bg-dark p-1 rounded text-box'>ids</span> value is what most will be interested in. This contains a mapping of provider names to their site-specific identifier for the media.
+              <div class='mt-3 text px-3 border-start border-primary border-3'>
                 Provider names will always be lowercased
               </div>
-              <div class="my-3 text px-3 border-start border-primary border-3">
-                If a provider requires multiple IDs to resolve the media they will be pipe <span class="font-monospace bg-dark p-1 rounded text-box">|</span> delimited under one key
+              <div class='my-3 text px-3 border-start border-primary border-3'>
+                If a provider requires multiple IDs to resolve the media they will be pipe <span class='font-monospace bg-dark p-1 rounded text-box'>|</span> delimited under one key
               </div>
-              The <span class="font-monospace bg-dark p-1 rounded text-box">hash</span> value is an MD5 hash of the GMID. This is currently only used for file storage.
+              The <span class='font-monospace bg-dark p-1 rounded text-box'>hash</span> value is an MD5 hash of the GMID. This is currently only used for file storage.
             </div>
           </div>
         </div>
       </main>
-      <h4>Contact Us</h4>
-      <hr />
-      <p class="text">
-        We are open to feedback about our API and services at NSBX.<br />
-        Though we will not comply to complaints about scrapping unless our philosophy suddenly changes.
-      </p>
-      <div class="mx-2">
-        <div class="flex" style="display: flex; justify-content: space-between; padding-bottom: 12px;">
-          <input class="bg-dark email-address" type="email" placeholder="Sender email:" />
-          <input class="bg-dark email-subject" type="email" placeholder="Subject:" />
+      <div style='cursor: default;'>
+        <h4>Contact Us</h4>
+        <hr />
+        <p class='text'>
+          We are open to feedback about our API and services at NSBX.<br />
+          Though we will not comply to complaints about scrapping unless our philosophy suddenly changes.
+        </p>
+        <div class='flex' style='display: flex; justify-content: space-between; padding-bottom: 12px;'>
+          <input class='bg-dark email-address' type='email' id='email-address-input' placeholder='Sender email:' />
+          <input class='bg-dark email-subject' type='email' id='email-subject-input' placeholder='Subject:' />
         </div>
-        <textarea class="bg-dark email-body pb-5" placeholder="Email content..."></textarea>
-        <button href="https://rentry.co/NSBlog" target="_blank" class="email bg-dark mt-2">
+        <textarea class='bg-dark email-body pb-5' id='email-content-input' placeholder='Email content...'></textarea>
+        <button onclick='logEmailInputs()' class='email bg-dark mt-2'>
           Send to dev@nsbx.ru
-        </button> <!-- https://www.mail-signatures.com/articles/mailto-links-emails/ -->
+        </button>
       </div>
     </div>
   </body>
