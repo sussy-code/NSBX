@@ -23,6 +23,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
     <style>
+      /* This is literally half of the file... */
       body {
         font-family: "Open Sans", sans-serif;
         color: #cfcfcf;
@@ -38,9 +39,18 @@
         cursor: text;
       }
 
+      .line {
+        margin-left: 0.8em;
+        margin-bottom: 0.6em;
+        padding-left: 0.5em;
+        border-bottom: 0.00625em solid #505050;
+      }
+
       .ratelimit-box {
         background-color: transparent;
         width: 50%;
+        padding-top: 0.1em;
+        padding-bottom: 0.1em;
         border: #505050 solid 0.00625em;
         margin-right: auto;
         margin-left: auto;
@@ -130,7 +140,7 @@
       }
 
       .bar:hover {
-        transition: 0.4s;
+        transition: 0.33s;
         background-color: #1a1a1a;
       }
 
@@ -149,19 +159,19 @@
         padding: 0.35em;
         font-size: 14px;
         border-radius: 0.375em;
-        color: #cfcfcf;
+        background-color: #353535;
       }
 
       .small-button:hover {
         transform: scale(1.05);
-        transition: 0.1s;
+        transition: 0.22s;
         cursor: pointer;
       }
 
       #statusBox {
         position: relative;
         cursor: default;
-        width: 11em;
+        width: 10.35em;
         height: 2.6em;
         border: #505050 solid 0.00625em;
         border-radius: 0.1875em;
@@ -216,7 +226,7 @@
           .catch((error) => {
             console.error("Error checking site status:", error);
             document.getElementById("statusIndicator").style.backgroundColor = "red";
-            document.getElementById("statusText").textContent = "Offline";
+            document.getElementById("statusText").textContent = "Offline :(";
           });
       }
 
@@ -234,7 +244,7 @@
         </div>
         <div id="statusBox" class="text mt-3 justify-content-center">
           <div class="status-indicator" id="statusIndicator"></div>
-          <span class="status-text" id="statusText">Checking...</span>
+          <span class="status-text font-monospace" id="statusText">Checking...</span>
         </div>
       </header>
 
@@ -248,34 +258,29 @@
               content and 3rd party features to their users. Most of the content people will be looking for is accessible from a single API: NSBX.
             </p>
 
-            <h4>Services</h4>
+            <h4>Sources</h4>
             <hr />
-            <p class="text">Only two services are currently defined, but more may be added if needed.<br /></p>
+            <p class="text">We provide the below sources through our API.</p>
 
             <div class="bar">
-              <dl class="row pt-1">
-                <dt class="col-1 font-monospace">VP</dt>
-                <dd class="col-11">Vaporpick</dd>
-
-                <dt class="col-1 font-monospace">CR</dt>
-                <dd class="col-11">CineRaid</dd>
+              <dl class="row py-2">
+                <dd class="col-11 line">Alpha</dd>
+                <dd class="col-11 line">Bravo</dd>
+                <dd class="col-11 line">Charlie</dd>
               </dl>
             </div>
 
-            <h4>Ratelimits</h4>
-            <hr />
-            <p class="text">
-              Our ratelimits are designed to be lenient for users and strict for scrapers, we are open to changing them at a later point.
-            </p>
-
-            <div class="ratelimit-box">
-              20 requests per hour
+            <div class="mb-3 text">
+              Teach skids to use API !
             </div>
           </div>
           <div class="col-md-6">
             <h4>Response</h4>
             <hr />
-            <div class="bg-dark mb-3 api-response" style="cursor: text;">
+            <div class="flex bg-dark mb-3 api-response" style="cursor: text; position: relative;">
+              <button onclick="copyToClipboard()" class="small-button" style="position: absolute; top: 0; right: 0; margin: 0.7em;">
+                <img title="copy to clipboard" height="26px" width="auto" src="https://i.postimg.cc/KzPTVQHT/copy.png" />
+              </button>
               <pre>
 {
   'gmid': 'M.848326',
@@ -290,17 +295,16 @@
 }
               </pre>
             </div>
-            <button onclick="copyToClipboard()" class="small-button bg-dark">
-              Copy to clipboard
-            </button>
-            <hr />
             <div class="mb-3 text">
-              The <span class="font-monospace bg-dark p-1 rounded text-box">ids</span> value is what most will be interested in. This contains a mapping of provider names to their site-specific identifier for the media.
-              <div class="mt-3 text py-1 bar">
-                Provider names will always be lowercased
-              </div>
-              <div class="my-3 text py-1 bar">If a provider requires multiple IDs to resolve the media they will be pipe <span class="font-monospace bg-dark p-1 rounded text-box">|</span> delimited under one key</div>
-              The <span class="font-monospace bg-dark p-1 rounded text-box">hash</span> value is an MD5 hash of the GMID. This is currently only used for file storage.
+              Insert yap about API response
+            </div>
+            <h4>Ratelimits</h4>
+            <hr />
+            <p class="text">
+              Our ratelimits are designed to be lenient for users and strict for scrapers, we are open to changing them at a later point.
+            </p>
+            <div class="ratelimit-box">
+              20 requests per hour
             </div>
           </div>
         </div>
@@ -312,7 +316,7 @@
           We are open to feedback about our API and services at NSBX.<br />
           Though we will not comply to complaints about scrapping unless our philosophy suddenly changes.
         </p>
-        <div class="email-bar">
+        <div class="email-bar py-2">
           <div class="pb-2">
             <input class="bg-dark email-subject" type="email" id="email-subject-input" placeholder="Subject:" />
           </div>
