@@ -35,8 +35,8 @@
       }
 
       .text {
-        margin-left: 0.25em;
-        margin-right: 0.25em;
+        padding-left: 4em;
+        padding-right: 4em;
       }
 
       .border-below {
@@ -80,31 +80,6 @@
         cursor: pointer;
       }
 
-      #statusBox {
-        position: relative;
-        cursor: default;
-        width: 10.35em;
-        height: 2.6em;
-        border: #505050 solid 0.00625em;
-        border-radius: 0.1875em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .status-indicator {
-        width: 1.1em;
-        height: 1.1em;
-        border: solid transparent;
-        background-color: red;
-        border-radius: 50%;
-      }
-
-      .status-text {
-        font-size: large;
-        margin-left: 0.625em;
-      }
-
       .box {
         margin-top: 3em;
         width: 90%;
@@ -140,13 +115,9 @@
     <div class="col-lg-8 mx-auto p-4 py-md-5">
       <header class="d-flex align-items-center pb-3 mb-3 justify-content-between">
         <div>
-          <a href="index.html" rel="noopener" title="home page" class="d-flex flex-column align-items-center text-light text-decoration-none">
+          <a href="/" rel="noopener" title="home page" class="d-flex flex-column align-items-center text-light text-decoration-none">
             <img height="60px" width="auto" src="https://i.postimg.cc/tCzZT74H/home-icon.png" alt="home icon with text" class="img-button" />
           </a>
-        </div>
-        <div id="statusBox" class="text mt-3 justify-content-center">
-          <div class="status-indicator" id="statusIndicator"></div>
-          <span class="status-text font-monospace" id="statusText">Checking...</span>
         </div>
       </header>
 
@@ -161,23 +132,13 @@
           <div class="d-flex justify-content-center">
             <h4 class="text p-1 border-below">Changes</h4>
           </div>
-          <p class="text px-5 pt-2 pb-4">
-            In the heart of the bustling city, nestled between towering skyscrapers and noisy streets, there existed a forgotten library. Its name had long faded from memory, and its grand facade was now obscured by creeping vines and
-            layers of dust. Only a few curious souls stumbled upon it, drawn by an inexplicable force. Evelyn, a young woman with a penchant for adventure, discovered the library one rainy afternoon. She pushed open the heavy wooden door,
-            and the scent of old parchment enveloped her. The air crackled with magic, and the shelves groaned under the weight of ancient tomes. The librarian, an elderly man with silver hair and twinkling eyes, greeted her. His name was
-            Mr. Thistledown, and he had been the guardian of this forgotten sanctuary for centuries. His knowledge spanned realms and dimensions, and he welcomed anyone who sought wisdom. Evelyn explored the labyrinthine corridors, each
-            section dedicated to a different mystery. The "Whispering Woods" held books that spoke in hushed tones, revealing secrets only to those who listened carefully. In the "Starlight Archives," constellations danced across the pages,
-            illuminating forgotten histories. One day, Evelyn stumbled upon a peculiar book titled "The Lost Doorway." Its cover was bound in dragon scales, and the pages shimmered like moonlight on water. Mr. Thistledown warned her—it was
-            a dangerous tome, capable of opening portals to other worlds. But Evelyn's curiosity knew no bounds. She traced her fingers over the intricate runes and whispered the incantation. The library trembled, and a doorway
-            materialized—a swirling vortex leading to an unknown realm. With a leap of faith, Evelyn stepped through. She found herself in a land of perpetual twilight. The sky was a canvas of shifting colors, and strange creatures roamed
-            the misty forests. A silver river wound through the landscape, carrying memories of forgotten dreams. Evelyn's quest began. She encountered a lonely minstrel who sang songs of lost love, a clockwork dragon guarding a hidden
-            treasure, and a moonlit garden where wishes bloomed as fragile flowers. Each encounter revealed a piece of her own forgotten past. As weeks turned into months, Evelyn grew homesick. She missed Mr. Thistledown's warm tea and the
-            smell of old books. But the doorway remained elusive, refusing to open again. She wondered if she would ever return. One fateful night, beneath a sky ablaze with shooting stars, Evelyn met the Keeper of Doors. He was an ancient
-            being, his eyes like door handles, and his cloak woven from forgotten memories. He offered her a choice: stay in this enchanting realm forever or find her way back home. Evelyn hesitated. The forgotten library beckoned, and yet
-            her heart longed for the familiar. She thought of Mr. Thistledown and the stories she had yet to write. In the end, she chose to return. The library welcomed her with open arms. Mr. Thistledown smiled, knowing she had glimpsed
-            wonders beyond imagination. And as Evelyn sat by the crackling fireplace, pen in hand, she began to write—the story of her adventures, the minstrel's songs, and the moonlit garden. The forgotten library would never be forgotten
-            again. --- And so, dear reader, remember that hidden within the dustiest corners of our world lie magical places waiting to be discovered. 📚✨
-          </p>
+          <div class="text pt-2 pb-4">
+            <ul>
+              <li>More sources 🌐</li>
+              <li>Better quality 🎥</li>
+              <li>Faster! ⚡</li>
+          </ul>
+        </div>
         </div>
       </main>
     </div>
