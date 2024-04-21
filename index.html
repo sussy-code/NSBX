@@ -8,340 +8,385 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="author" content="BadDev" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
-    <link rel="icon" href="https://i.postimg.cc/prbvRXth/icon.png" type="image/x-icon" />
-    <title>NSBX</title>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="BadDev" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+		<link rel="icon" href="https://i.postimg.cc/prbvRXth/icon.png" type="image/x-icon" />
+		<title>NSBX</title>
 
-    <link rel="canonical" href="https://YOUR_DOMAIN.TLD" />
+		<link rel="canonical" href="https://nsbx.ru" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <style>
-      /* This is literally half of the file... */
-      body {
-        font-family: "Open Sans", sans-serif;
-        color: #cfcfcf;
-        background-color: #131313;
-      }
+		<style>
+			/* This is literally half of the file... */
+			body {
+				font-family: 'Open Sans', sans-serif;
+				color: #cfcfcf;
+				background-color: #131313;
+			}
 
-      .text {
-        margin-left: 0.25em;
-        margin-right: 0.25em;
-      }
+			.text {
+				margin-left: 0.25em;
+				margin-right: 0.25em;
+			}
 
-      .box {
-        background-color: transparent;
-        padding-top: 0.1em;
-        padding-bottom: 0.1em;
-        margin-left: 0.65em;
-        margin-right: 0.65em;
-      }
+			.box {
+				background-color: transparent;
+				padding-top: 0.1em;
+				padding-bottom: 0.1em;
+				margin-left: 0.65em;
+				margin-right: 0.65em;
+			}
 
-      .text-box {
-        cursor: text;
-      }
+			.text-box {
+				cursor: text;
+			}
 
-      .ratelimit-box {
-        background-color: transparent;
-        width: 50%;
-        padding-top: 0.1em;
-        padding-bottom: 0.1em;
-        border: #505050 solid 0.00625em;
-        margin-right: auto;
-        margin-left: auto;
-        text-align: center;
-        border-radius: 0.1875em;
-      }
+			.email-address {
+				padding: 0.625em;
+				color: #cfcfcf;
+				border: transparent solid;
+				border-radius: 0.25em;
+				margin: 0.125em;
+				width: 42%;
+				height: auto;
+			}
 
-      .email-address {
-        padding: 0.625em;
-        color: #cfcfcf;
-        border: transparent solid;
-        border-radius: 0.25em;
-        margin: 0.125em;
-        width: 42%;
-        height: auto;
-      }
+			.email-subject {
+				padding: 0.625em;
+				color: #cfcfcf;
+				border: transparent solid;
+				border-radius: 0.25em;
+				margin: 0.125em;
+				width: 100%;
+				height: auto;
+			}
 
-      .email-subject {
-        padding: 0.625em;
-        color: #cfcfcf;
-        border: transparent solid;
-        border-radius: 0.25em;
-        margin: 0.125em;
-        width: 50%;
-        height: auto;
-      }
+			.email-body {
+				padding: 0.625em;
+				color: #cfcfcf;
+				border: transparent solid;
+				border-radius: 0.25em;
+				margin: 0.125em;
+				width: 100%;
+				height: auto;
+				resize: none;
+			}
 
-      .email-body {
-        padding: 0.625em;
-        color: #cfcfcf;
-        border: transparent solid;
-        border-radius: 0.25em;
-        margin: 0.125em;
-        width: 100%;
-        height: auto;
-        resize: none;
-      }
+			.email-address:focus {
+				outline: none;
+			}
 
-      .email-address:focus {
-        outline: none;
-      }
+			.email-subject:focus {
+				outline: none;
+			}
 
-      .email-subject:focus {
-        outline: none;
-      }
+			.email-body:focus {
+				outline: none;
+			}
 
-      .email-body:focus {
-        outline: none;
-      }
+			.api-response {
+				padding-top: 0.75em;
+				padding-left: 0.75em;
+				padding-right: 0.75em;
+				padding-bottom: 0.125em;
+				border-radius: 0.25em;
+				margin-left: 0.125em;
+				margin-right: 0.125em;
+			}
 
-      .api-response {
-        padding-top: 0.75em;
-        padding-left: 0.75em;
-        padding-right: 0.75em;
-        border-radius: 0.25em;
-        margin-left: 0.125em;
-        margin-right: 0.125em;
-      }
+			.email {
+				border: transparent solid;
+				padding: 0.5em;
+				border-radius: 0.375em;
+				color: #cfcfcf;
+				transition: 0.1s;
+				cursor: pointer;
+			}
 
-      .email {
-        border: transparent solid;
-        padding: 0.5em;
-        border-radius: 0.375em;
-        color: #cfcfcf;
-      }
+			.email:hover {
+				transform: scale(1.05);
+			}
 
-      .email:hover {
-        transform: scale(1.05);
-        transition: 0.1s;
-        cursor: pointer;
-      }
+			.email-bar {
+				margin-left: 0.65em;
+				margin-right: 0.65em;
+				padding-left: 0.9375em;
+				border-left: 0.19em #8d44d6 solid;
+				border-radius: 0.2em;
+			}
 
-      .email-bar {
-        margin-left: 0.65em;
-        margin-right: 0.65em;
-        padding-left: 0.9375em;
-        border-left: 0.19em #8d44d6 solid;
-        border-radius: 0.2em;
-      }
+			.bar {
+				margin-left: 0.65em;
+				margin-right: 0.65em;
+				padding-left: 0.9375em;
+				border-left: 0.19em #8d44d6 solid;
+				border-radius: 0.2em;
+			}
 
-      .bar {
-        margin-left: 0.65em;
-        margin-right: 0.65em;
-        padding-left: 0.9375em;
-        border-left: 0.19em #8d44d6 solid;
-        border-radius: 0.2em;
-      }
+			.bar:hover {
+				transition: 0.33s;
+				background-color: #1b1b1b;
+			}
 
-      .bar:hover {
-        transition: 0.33s;
-        background-color: #1b1b1b;
-      }
+			.img-button {
+				font-size: large;
+				transition: 0.5s;
+				cursor: pointer;
+			}
 
-      .img-button {
-        font-size: large;
-      }
+			.img-button:hover {
+				transform: scale(1.1);
+			}
 
-      .img-button:hover {
-        transform: scale(1.1);
-        transition: 0.5s;
-        cursor: pointer;
-      }
+			.small-button {
+				border: transparent solid;
+				padding: 0.35em;
+				font-size: 14px;
+				border-radius: 0.375em;
+				background-color: #353535;
+			}
 
-      .small-button {
-        border: transparent solid;
-        padding: 0.35em;
-        font-size: 14px;
-        border-radius: 0.375em;
-        background-color: #353535;
-      }
+			.small-button:hover {
+				transform: scale(1.05);
+				transition: 0.22s;
+				cursor: pointer;
+			}
 
-      .small-button:hover {
-        transform: scale(1.05);
-        transition: 0.22s;
-        cursor: pointer;
-      }
+			#statusBox {
+				position: relative;
+				cursor: default;
+				width: 12.9em;
+				height: 66px;
+				border: #8d44d6 solid 0.12em;
+				border-radius: 0.1875em;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: border-color 0.5s;
+				border-radius: 0.625em;
+			}
 
-      #statusBox {
-        position: relative;
-        cursor: default;
-        width: 10.35em;
-        height: 2.6em;
-        border: #505050 solid 0.00625em;
-        border-radius: 0.1875em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+			.status-text {
+				font-size: 1.5em;
+			}
 
-      .status-indicator {
-        width: 1.1em;
-        height: 1.1em;
-        border: solid transparent;
-        background-color: red;
-        border-radius: 50%;
-      }
+			.inline-code {
+				display: inline-block;
+				background-color: #383636; /* Background color */
+				padding: 0em 0.4em; /* Padding */
+				border-radius: 4px; /* Rounded corners */
+				font-family: monospace; /* Font */
+			}
+			a {
+				transition: all 0.3s;
+			}
+			a:link {
+				color: unset;
+				text-decoration: none;
+			}
 
-      .status-text {
-        font-size: large;
-        margin-left: 0.625em;
-      }
-    </style>
-    <script>
-      function openMailClient() {
-        var subject = document.getElementById("email-subject-input").value;
-        var content = document.getElementById("email-content-input").value;
+			a:visited {
+				color: unset;
+				text-decoration: none;
+			}
 
-        if (content !== "" && subject !== "") {
-          const mailLink = `mailto:dev@nsbx.ru?subject=${subject}&body=${content}`;
-          window.open(mailLink, "_blank");
-        }
-      }
+			a:hover {
+				color: #8d44d6;
+				background-color: transparent;
+			}
+		</style>
+		<script>
+			function openMailClient() {
+				var subject = document.getElementById('email-subject-input').value;
+				var content = document.getElementById('email-content-input').value;
 
-      function copyToClipboard() {
-        var text = document.querySelector(".api-response pre").innerText;
-        var tempInput = document.createElement("textarea");
-        tempInput.value = text;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        document.execCommand("copy");
-        document.body.removeChild(tempInput);
-      }
+				if (content !== '' && subject !== '') {
+					const mailLink = `mailto:dev@nsbx.ru?subject=${subject}&body=${content}`;
+					window.open(mailLink, '_blank');
+				}
+			}
 
-      function checkSiteStatus() {
-        fetch("https://nsbx.ru/status", {
-          method: "HEAD",
-          mode: "no-cors",
-        })
-          .then(() => {
-            document.getElementById("statusIndicator").style.backgroundColor = "green";
-            document.getElementById("statusText").textContent = "Online";
-          })
-          .catch((error) => {
-            console.error("Error checking site status:", error);
-            document.getElementById("statusIndicator").style.backgroundColor = "red";
-            document.getElementById("statusText").textContent = "Offline :(";
-          });
-      }
+			function copyToClipboard() {
+				var text = document.querySelector('.api-response pre').innerText;
+				var tempInput = document.createElement('textarea');
+				tempInput.value = text;
+				document.body.appendChild(tempInput);
+				tempInput.select();
+				document.execCommand('copy');
+				document.body.removeChild(tempInput);
+			}
 
-      window.onload = checkSiteStatus;
-    </script>
-  </head>
+			function checkSiteStatus() {
+				const time = performance.now();
+				fetch('https://api.nsbx.ru/status', {
+					method: 'GET',
+				})
+					.then((res) => {
+						alert(res.status);
+						if (res.status === 200) {
+							document.getElementById('statusBox').style.borderColor = '#57F287';
+							document.getElementById('statusText').textContent = `Online (${Math.round(performance.now() - time)}ms)`;
+						} else {
+							document.getElementById('statusBox').style.borderColor = '#ED4245';
+							document.getElementById('statusText').textContent = 'Offline :(';
+						}
+					})
+					.catch((error) => {
+						console.error('Error checking site status:', error);
+						document.getElementById('statusBox').style.borderColor = '#ED4245';
+						document.getElementById('statusText').textContent = 'Offline :(';
+					});
+			}
 
-  <body>
-    <div class="col-lg-8 mx-auto p-4 py-md-5">
-      <header class="d-flex align-items-center pb-3 mb-3 justify-content-between">
-        <div>
-          <a href="/" rel="noopener" title="home page" class="d-flex flex-column align-items-center text-light text-decoration-none">
-            <img height="60px" width="auto" src="https://i.postimg.cc/tCzZT74H/home-icon.png" alt="home icon with text" class="img-button" />
-          </a>
-        </div>
-        <div id="statusBox" class="text mt-3 justify-content-center">
-          <div class="status-indicator" id="statusIndicator"></div>
-          <span class="status-text font-monospace" id="statusText">Checking...</span>
-        </div>
-      </header>
+			window.onload = checkSiteStatus;
+		</script>
+	</head>
 
-      <main>
-        <div class="row g-5" style="cursor: default;">
-          <div class="col-md-6">
-            <h3>WTF is a NSBX?</h3>
-            <hr />
-            <p class="text">
-              NSBX is an API used by sudo-flix and other movie-web fork for scraping content and subtitles, The NSBX API is a critical part of the infrastructure that enables sudo-flix and other movie-web forks to offer a wide range of
-              content and 3rd party features to their users. Most of the content people will be looking for is accessible from a single API: NSBX.
-            </p>
+	<body>
+		<div class="col-lg-8 mx-auto p-4 py-md-5">
+			<header class="d-flex align-items-center pb-3 mb-3 justify-content-between">
+				<div>
+					<a href="/" rel="noopener" title="home page" class="d-flex flex-column align-items-center text-light text-decoration-none">
+						<img height="60px" width="auto" src="https://i.postimg.cc/tCzZT74H/home-icon.png" alt="home icon with text" class="img-button" />
+					</a>
+				</div>
+				<div id="statusBox" class="text mt-3 justify-content-center" style="height: 60px">
+					<span class="status-text font-monospace" id="statusText">Checking...</span>
+				</div>
+			</header>
 
-            <h4>Sources</h4>
-            <hr />
-            <p class="text">We provide the below sources through our API.</p>
+			<main>
+				<div class="row g-5" style="cursor: default">
+					<div class="col-md-6">
+						<h3>WTF is a NSBX?</h3>
+						<hr />
+						<p class="text">
+							NSBX is a service that offers an API designed to assist users in fetching streams from different sources. It serves as a bridge between
+							users and streaming sources, simplifying the process of fetching streams. With NSBX you need not worry about the infrastructure or
+							resources required to fetch streams - NSBX has you covered.
+						</p>
 
-            <div class="bar">
-              <dl class="row pt-1">
-                <dt class="col-1 font-monospace">A</dt>
-                <dd class="col-11">Alpha</dd>
+						<h3>Sources</h3>
+						<hr />
+						<p class="text">At present, we offer a single source, but fully intend to grow in the future</p>
 
-                <dt class="col-1 font-monospace">B</dt>
-                <dd class="col-11">Bravo</dd>
+						<div class="bar">
+							<dl class="row pt-1">
+								<dt class="col-1 font-monospace">D</dt>
+								<dd class="col-11">Delta</dd>
 
-                <dt class="col-1 font-monospace">D</dt>
-                <dd class="col-11">Delta</dd>
-              </dl>
-            </div>
-            <div class="mb-3 text">
-              Teach skids to use API !
-            </div>
+								<dt class="col-1 font-monospace">A</dt>
+								<dd class="col-11">Alpha</dd>
 
-            <h4>Updates</h4>
-            <hr />
-            <p class="text">
-              We regularly update our API and adjust our focus. For the latest updates, check the NSBX changelog. Please note that we cannot provide detailed information for security reasons.
-            </p>
-            <div class="box">
-              <button onclick="window.location.href = '/changelog'" class="email bg-dark mb-4">
-                Open changelog
-              </button>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <h4>Response</h4>
-            <hr />
-            <div class="flex bg-dark mb-3 api-response" style="cursor: text; position: relative;">
-              <button onclick="copyToClipboard()" class="small-button" style="position: absolute; top: 0; right: 0; margin: 0.7em;">
-                <img title="copy to clipboard" height="26px" width="auto" src="https://i.postimg.cc/KzPTVQHT/copy.png" />
-              </button>
-              <pre>
+								<dt class="col-1 font-monospace">B</dt>
+								<dd class="col-11">Beta</dd>
+							</dl>
+						</div>
+						<div class="mb-3 text">
+							Note: Sources
+							<span class="inline-code">Alpha</span>
+							and
+							<span class="inline-code">Beta</span>
+							are non-operational at the moment
+						</div>
+
+						<h3>Updates</h3>
+						<hr />
+						<p class="text">
+							We are constantly updating our API to improve the user experience and add new features. You can take a look at our
+							<a href="https://blog.nsbx.ru/"><span class="inline-code">changelog</span></a>
+							for the latest updates. Please note that we wont be able to provide detailed information about the changes made to the API due to
+							security concerns.
+						</p>
+						<!-- <div class="box">
+							<button onclick="window.location.href = '/changelog'" class="email bg-dark mb-4">Open changelog</button>
+						</div> -->
+					</div>
+					<div class="col-md-6">
+						<h3>Our... Docs</h3>
+						<hr />
+						<div class="mb-3 text">
+							Our API simplifies content discovery with the
+							<span class="inline-code">/search</span>
+							endpoint. It takes a
+							<span class="inline-code">query</span>
+							parameter which is an url-encoded stringified json object which the following properties:
+						</div>
+						<div class="flex bg-dark mb-3 api-response" style="cursor: text; position: relative">
+							<button onclick="copyToClipboard()" class="small-button" style="position: absolute; top: 0; right: 0; margin: 0.7em">
+								<img title="copy to clipboard" height="26px" width="auto" src="https://i.postimg.cc/KzPTVQHT/copy.png" />
+							</button>
+							<pre>
 {
-  'gmid': 'M.848326',
-  'tmdb': '848326',
-  'ids': {
-    'febbox': '9352539',
-    'flixhq': '11054',
-    'superstream': '23613',
-    'upcloud': 'Fi2PTv1w426l'
-  },
-  'hash': '7c058fcc923017264da8c017c550fe9d'
+  'title': 'Castle',
+  'releaseYear': '2009',
+  'tmdbId': '1419',
+  'imdbId': 'tt1219024',
+  'type': 'show',
+  'season': '1',
+  'episode': '1'
 }
-              </pre>
-            </div>
-            <div class="mb-3 text">
-              Insert yap about API response
-            </div>
-            <h4>Ratelimits</h4>
-            <hr />
-            <p class="text">
-              Our ratelimits are designed to be lenient for users and strict for scrapers, we are open to changing them at a later point.
-            </p>
-            <div class="ratelimit-box">
-              20 requests per hour
-            </div>
-          </div>
-        </div>
-      </main>
-      <div style="cursor: default;">
-        <h4>Contact Us</h4>
-        <hr />
-        <p class="text">
-          We are open to feedback about our API and services at NSBX.<br />
-          Though we will not comply to complaints about scrapping unless our philosophy suddenly changes.
-        </p>
-        <div class="email-bar py-2">
-          <div class="pb-2">
-            <input class="bg-dark email-subject" type="email" id="email-subject-input" placeholder="Subject:" />
-          </div>
-          <textarea class="bg-dark email-body pb-5" id="email-content-input" placeholder="Email content..."></textarea>
-          <button onclick="openMailClient()" class="email bg-dark mt-2">
-            Send to dev@nsbx.ru
-          </button>
-        </div>
-      </div>
-    </div>
-  </body>
+</pre
+							>
+						</div>
+						<div class="mb-3 text">
+							Note: The
+							<span class="inline-code">season</span>
+							and
+							<span class="inline-code">episode</span>
+							properties are optional and only required for TV shows.
+							<pre></pre>
+							This returns a value of type
+							<a href="https://github.com/movie-web/providers/blob/dev/src/providers/base.ts#L12-L15" target="_blank">
+								<span class="inline-code">SourcererOutput</span>
+							</a>
+
+							with an embedId property containing the embed name and a url property containing the resourceId.
+							<pre></pre>
+							With this information, you can easily fetch the streams using the embedId and resourceId from
+							<span class="inline-code">/source/${embedId}</span>
+							using the resourceId as a parameter. This returns a value of type
+							<a href="https://github.com/movie-web/providers/blob/dev/src/providers/base.ts#L45-L47" target="_blank">
+								<span class="inline-code">EmbedOutput</span>
+							</a>
+							with all the streams available for the given resourceId.
+
+							<pre></pre>
+
+							This response usually contains multiple qualities, and subitles if available.
+						</div>
+						<!-- <h4>Ratelimits</h4>
+						<hr />
+						<p class="text">
+							Our ratelimits are designed to be lenient for users and strict for scrapers, we are open to changing them at a later point.
+						</p>
+						<div class="ratelimit-box">20 requests per hour</div> -->
+					</div>
+				</div>
+			</main>
+			<div style="cursor: default">
+				<h3>Contact Us</h3>
+				<hr />
+				<p class="text">
+					We are open to feedback about our API and services at NSBX.
+					<br />
+					Though we will not comply to complaints about scrapping unless our philosophy suddenly changes.
+				</p>
+				<div class="email-bar py-2">
+					<div class="pb-2">
+						<input class="bg-dark email-subject" type="email" id="email-subject-input" placeholder="Subject:" />
+					</div>
+					<textarea class="bg-dark email-body pb-5" id="email-content-input" placeholder="Email content..."></textarea>
+					<button onclick="openMailClient()" class="email bg-dark mt-2">Send to dev@nsbx.ru</button>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
+
