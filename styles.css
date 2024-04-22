@@ -1,0 +1,219 @@
+/* This is literally half of the file... */
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #cfcfcf;
+	background-color: #131313;
+}
+
+html {
+	overflow: scroll;
+	overflow-x: hidden;
+}
+::-webkit-scrollbar {
+	width: 0; /* Remove scrollbar space */
+	background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+	background: #ff0000;
+}
+
+.text {
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+}
+
+.text-box {
+	cursor: text;
+}
+
+.email-address {
+	padding: 0.625em;
+	color: #cfcfcf;
+	border: transparent solid;
+	border-radius: 0.25em;
+	margin: 0.125em;
+	width: 42%;
+	height: auto;
+}
+
+.email-subject {
+	padding: 0.625em;
+	color: #cfcfcf;
+	border: transparent solid;
+	border-radius: 0.25em;
+	margin: 0.125em;
+	width: 100%;
+	height: auto;
+}
+
+.email-body {
+	padding: 0.625em;
+	color: #cfcfcf;
+	border: transparent solid;
+	border-radius: 0.25em;
+	margin: 0.125em;
+	width: 100%;
+	height: auto;
+	resize: none;
+}
+
+.email-address:focus {
+	outline: none;
+}
+
+.email-subject:focus {
+	outline: none;
+}
+
+.email-body:focus {
+	outline: none;
+}
+
+.api-response {
+	padding-top: 0.75em;
+	padding-left: 0.75em;
+	padding-right: 0.75em;
+	padding-bottom: 0.125em;
+	border-radius: 0.25em;
+	margin-left: 0.125em;
+	margin-right: 0.125em;
+}
+
+.email {
+	border: transparent solid;
+	padding: 0.5em;
+	border-radius: 0.375em;
+	color: #cfcfcf;
+	transition: 0.1s;
+	cursor: pointer;
+}
+
+.email:hover {
+	transform: scale(1.05);
+}
+
+.email-bar {
+	margin-left: 0.65em;
+	margin-right: 0.65em;
+	padding-left: 0.9375em;
+	border-left: 0.19em #8d44d6 solid;
+	border-radius: 0.2em;
+}
+
+.bar {
+	margin-left: 0.65em;
+	margin-right: 0.65em;
+	padding-left: 0.9375em;
+	border-left: 0.19em #8d44d6 solid;
+	border-radius: 0.2em;
+}
+
+.bar:hover {
+	transition: 0.33s;
+	background-color: #1b1b1b;
+}
+
+.img-button {
+	font-size: large;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+.img-button:hover {
+	transform: scale(1.1);
+}
+
+.small-button {
+	border: transparent solid;
+	padding: 0.35em;
+	font-size: 14px;
+	border-radius: 0.375em;
+	background-color: #353535;
+}
+
+.small-button:hover {
+	transform: scale(1.05);
+	transition: 0.22s;
+	cursor: pointer;
+}
+
+#statusBox {
+	position: relative;
+	cursor: default;
+	width: 12.9em;
+	height: 66px;
+	border: #8d44d6 solid 0.12em;
+	border-radius: 0.1875em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: border-color 0.5s;
+	border-radius: 0.625em;
+}
+
+.status-text {
+	font-size: 1.5em;
+}
+
+.inline-code {
+	display: inline-block;
+	background-color: #383636; /* Background color */
+	padding: 0em 0.4em; /* Padding */
+	border-radius: 4px; /* Rounded corners */
+	font-family: monospace; /* Font */
+}
+a {
+	transition: all 0.3s;
+}
+a:link {
+	color: unset;
+	text-decoration: none;
+}
+
+a:visited {
+	color: unset;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #8d44d6;
+	background-color: transparent;
+}
+
+.center {
+	text-align: center;
+}
+
+.changelog {
+	text-align: left;
+	font-family: Arial, sans-serif;
+	padding-top: 4em;
+	max-width: 75%; /* Limiting width to 80 characters */
+	margin: 0 auto;
+}
+
+.changelog .entry {
+	margin-bottom: 20px;
+}
+
+.changelog h3 {
+	margin-top: 0;
+}
+
+.changelog .actions {
+	margin-top: 10px;
+}
+
+.changelog h4 {
+	margin-top: 15px; /* Added spacing between action types */
+}
+
+.changelog ul {
+	padding-left: 50px; /* Added left padding for bullet points */
+	font-size: 1em;
+}
+
+.changelog ul li {
+	margin-bottom: 5px;
+}

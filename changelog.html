@@ -8,139 +8,81 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="author" content="BadDev" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
-    <link rel="icon" href="https://i.postimg.cc/prbvRXth/icon.png" type="image/x-icon" />
-    <title>NSBX</title>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="BadDev" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+		<link rel="icon" href="/icon.webp" type="image/x-icon" />
+		<title>NSBX</title>
 
-    <link rel="canonical" href="https://YOUR_DOMAIN.TLD" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+		<link href="/styles.css" rel="stylesheet" />
 
-    <style>
-      /* This is literally half of the file... */
-      body {
-        font-family: "Open Sans", sans-serif;
-        color: #cfcfcf;
-        background-color: #131313;
-      }
+		<script src="/index.js"></script>
+	</head>
 
-      .center {
-        text-align: center;
-      }
+	<body>
+		<div class="col-lg-8 mx-auto p-4 py-md-5">
+			<header class="d-flex align-items-end pb-3 mb-3 justify-content-between">
+				<div>
+					<a href="/" rel="noopener" title="home page" class="d-flex flex-column align-items-center text-light text-decoration-none">
+						<img height="60px" width="auto" src="/home-icon.webp" alt="home icon with text" class="img-button" />
+					</a>
+				</div>
+				<h2 class="p-2" style="text-align: center">NSBX Changelog</h2>
 
-      .text {
-        padding-left: 4em;
-        padding-right: 4em;
-      }
+				<div id="statusBox" class="text mt-3 justify-content-center" style="height: 60px">
+					<span class="status-text font-monospace" id="statusText">Checking...</span>
+				</div>
+			</header>
 
-      .border-below {
-        border-bottom: #505050 solid 0.00625em;
-        width: 90%;
-        justify-content: center;
-      }
-
-      .ratelimit-box {
-        background-color: transparent;
-        width: 50%;
-        padding-top: 0.1em;
-        padding-bottom: 0.1em;
-        border: #505050 solid 0.00625em;
-        margin-right: auto;
-        margin-left: auto;
-        text-align: center;
-        border-radius: 0.1875em;
-      }
-
-      .bar {
-        margin-left: 0.65em;
-        margin-right: 0.65em;
-        padding-left: 0.9375em;
-        border-left: 0.19em #8d44d6 solid;
-        border-radius: 0.2em;
-      }
-
-      .bar:hover {
-        transition: 0.33s;
-        background-color: #1a1a1a;
-      }
-
-      .img-button {
-        font-size: large;
-      }
-
-      .img-button:hover {
-        transform: scale(1.1);
-        transition: 0.5s;
-        cursor: pointer;
-      }
-
-      .box {
-        margin-top: 3em;
-        width: 90%;
-        height: auto;
-        background-color: #1b1b1b;
-        margin: auto;
-        display: block;
-        border-radius: 0.25em;
-      }
-    </style>
-    <script>
-      function checkSiteStatus() {
-        fetch("https://nsbx.ru/status", {
-          method: "HEAD",
-          mode: "no-cors",
-        })
-          .then(() => {
-            document.getElementById("statusIndicator").style.backgroundColor = "green";
-            document.getElementById("statusText").textContent = "Online";
-          })
-          .catch((error) => {
-            console.error("Error checking site status:", error);
-            document.getElementById("statusIndicator").style.backgroundColor = "red";
-            document.getElementById("statusText").textContent = "Offline :(";
-          });
-      }
-
-      window.onload = checkSiteStatus;
-    </script>
-  </head>
-
-  <body>
-    <div class="col-lg-8 mx-auto p-4 py-md-5">
-      <header class="d-flex align-items-center pb-3 mb-3 justify-content-between">
-        <div>
-          <a href="/" rel="noopener" title="home page" class="d-flex flex-column align-items-center text-light text-decoration-none">
-            <img height="60px" width="auto" src="https://i.postimg.cc/tCzZT74H/home-icon.png" alt="home icon with text" class="img-button" />
-          </a>
-        </div>
-      </header>
-
-      <main>
-        <div class="box" style="cursor: default;">
-          <h3 class="p-3" style="text-align: center;">NSBX Changelog</h3>
-          <div class="d-flex justify-content-center"></div>
-          <div class="center">
-            <span class="font-monospace bg-dark p-1 mb-2 rounded text-box">Updated: April 18 2024</span>
-            <span class="font-monospace bg-dark p-1 mb-2 rounded text-box">Version: 1.0.0</span>
-          </div>
-          <div class="d-flex justify-content-center">
-            <h4 class="text p-1 border-below">Changes</h4>
-          </div>
-          <div class="text pt-2 pb-4">
-            <ul>
-              <li>More sources 🌐</li>
-              <li>Better quality 🎥</li>
-              <li>Faster! ⚡</li>
-          </ul>
-        </div>
-        </div>
-      </main>
-    </div>
-  </body>
+			<main>
+				<!-- <div class="box" style="cursor: default">
+					<div class="d-flex justify-content-center"></div>
+					<div class="text pt-2 pb-4">
+						<ul>
+							<li>More sources 🌐</li>
+							<li>Better quality 🎥</li>
+							<li>Faster! ⚡</li>
+						</ul>
+					</div>
+				</div> -->
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="changelog">
+								<div class="entry">
+									<h3>1.0.0 - YYYY-MM-DD</h3>
+									<pre></pre>
+									<h5>This is what has been changed xd</h5>
+									<div class="actions">
+										<h4>Added:</h4>
+										<ul>
+											<li>Added 1</li>
+											<li>Added 2</li>
+										</ul>
+										<pre></pre>
+										<h4>Changed:</h4>
+										<ul>
+											<li>Changed 1</li>
+										</ul>
+										<pre></pre>
+										<h4>Fixed:</h4>
+										<ul>
+											<li>Fixed 1</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</body>
 </html>
+
