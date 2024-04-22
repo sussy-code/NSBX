@@ -127,7 +127,7 @@ html {
 .small-button {
 	border: transparent solid;
 	padding: 0.35em;
-	font-size: 14px;
+	font-size: 10.25em;
 	border-radius: 0.375em;
 	background-color: #353535;
 }
@@ -141,12 +141,13 @@ html {
 #statusBox {
 	position: relative;
 	cursor: default;
-	width: 12.9em;
-	height: 66px;
+	width: 12.85em;
+	height: 3.25em;
 	border: #8d44d6 solid 0.12em;
 	border-radius: 0.1875em;
 	display: flex;
 	align-items: center;
+	text-align: center;
 	justify-content: center;
 	transition: border-color 0.5s;
 	border-radius: 0.625em;
@@ -154,13 +155,14 @@ html {
 
 .status-text {
 	font-size: 1.5em;
+	text-align: center;
 }
 
 .inline-code {
 	display: inline-block;
 	background-color: #383636; /* Background color */
 	padding: 0em 0.4em; /* Padding */
-	border-radius: 4px; /* Rounded corners */
+	border-radius: 0.25em; /* Rounded corners */
 	font-family: monospace; /* Font */
 }
 a {
@@ -194,7 +196,7 @@ a:hover {
 }
 
 .changelog .entry {
-	margin-bottom: 20px;
+	margin-bottom: 1.25em;
 }
 
 .changelog h3 {
@@ -202,18 +204,18 @@ a:hover {
 }
 
 .changelog .actions {
-	margin-top: 10px;
+	margin-top: 0.625em;
 }
 
 .changelog h4 {
-	margin-top: 15px; /* Added spacing between action types */
+	margin-top: 0.938em; /* Added spacing between action types */
 }
 
 .changelog ul {
-	padding-left: 50px; /* Added left padding for bullet points */
+	padding-left: 3.125em; /* Added left padding for bullet points */
 	font-size: 1em;
 }
 
 .changelog ul li {
-	margin-bottom: 5px;
+	margin-bottom: 50.313em;
 }
